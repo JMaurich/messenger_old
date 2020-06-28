@@ -20,6 +20,10 @@
     
 </head>
 <body>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
     <div id="app">
 
 
@@ -38,8 +42,10 @@
                         Registro
                     </b-nav-item>
                 @else
-                    <b-nav-item-dropdown text="Username" right> 
-                        <b-dropdown-item href="#">Cerrar sesión</b-dropdown-item>
+                    <b-nav-item-dropdown text="{{ auth()->user()->name }}" right> 
+                        <b-dropdown-item href="#" @click="logout">
+                            Cerrar sesión
+                        </b-dropdown-item>
                     </b-nav-item-dropdown> 
                 @endguest
         </b-navbar-nav>
