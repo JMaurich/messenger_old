@@ -1,13 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<b-container>
+    <b-row>
+        <b-col cols="6">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
+                    <b-alert variant="success" show>Success Alert</b-alert>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -71,7 +72,7 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+        </b-col>
+    </b-row>
+</b-container>
 @endsection
